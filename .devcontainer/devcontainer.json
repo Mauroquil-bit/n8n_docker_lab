@@ -1,0 +1,30 @@
+{
+  "name": "n8n Docker Lab",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [5678, 8080, 8081, 8082],
+  "portsAttributes": {
+    "5678": {
+      "label": "n8n",
+      "onAutoForward": "notify"
+    },
+    "8080": {
+      "label": "Web (ejercicios)",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "docker --version && echo '✅ Docker listo. Podés empezar desde el Módulo 00.'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "02 - Reporte Programado",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{"field": "minutes", "minutesInterval": 1}]
+        }
+      },
+      "id": "d4e5f6a7-b8c9-0123-defa-234567890123",
+      "name": "Cada 1 minuto",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const ahora = new Date();\n\nreturn {\n  titulo: 'Reporte de estado',\n  fecha: ahora.toLocaleDateString('es-AR'),\n  hora: ahora.toLocaleTimeString('es-AR'),\n  timestamp: ahora.toISOString(),\n  mensaje: '✅ Sistema funcionando correctamente'\n};"
+      },
+      "id": "e5f6a7b8-c9d0-1234-efab-345678901234",
+      "name": "Generar reporte",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    }
+  ],
+  "connections": {
+    "Cada 1 minuto": {
+      "main": [[{"node": "Generar reporte", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "tags": [{"name": "lab-ejemplo"}]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "03 - Procesar datos JSON",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "procesar",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "f6a7b8c9-d0e1-2345-fabc-456789012345",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const datos = $input.first().json;\nconst equipos = datos.equipos || [];\n\n// Filtrar solo los equipos con estado 'down'\nconst equiposCaidos = equipos.filter(e => e.estado === 'down');\n\nreturn {\n  total_recibidos: equipos.length,\n  equipos_caidos: equiposCaidos.length,\n  detalle: equiposCaidos,\n  procesado_en: new Date().toISOString()\n};"
+      },
+      "id": "a7b8c9d0-e1f2-3456-abcd-567890123456",
+      "name": "Filtrar equipos caidos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "b8c9d0e1-f2a3-4567-bcde-678901234567",
+      "name": "Responder",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [680, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [[{"node": "Filtrar equipos caidos", "type": "main", "index": 0}]]
+    },
+    "Filtrar equipos caidos": {
+      "main": [[{"node": "Responder", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "tags": [{"name": "lab-ejemplo"}]
+}
