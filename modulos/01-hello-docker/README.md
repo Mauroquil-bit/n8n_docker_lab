@@ -37,7 +37,15 @@ Status: Downloaded newer image for hello-world:latest
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ...
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
 ```
+
+Si la imagen ya estaba descargada, no vas a ver las lineas de `Pulling` ni `Downloaded newer image`. Ademas, las ultimas lineas pueden cambiar un poco segun la version de Docker y de la imagen `hello-world`. Lo importante es que aparezca `Hello from Docker!` y que no veas un error.
 
 ---
 
