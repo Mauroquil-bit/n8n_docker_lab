@@ -87,3 +87,16 @@ Seguí los módulos en orden la primera vez. Después podés saltar al que neces
 ```
 
 Cada módulo es independiente y tiene sus propios ejercicios con solución.
+
+## ¿Por qué armé este lab?
+
+Hice un curso interno en mi trabajo donde varios compañeros no 
+terminaron de captar la parte práctica. Como yo ya había trabajado 
+con Docker antes, me pidieron que les explicara. En vez de armar 
+una clase, preferí dejarles algo reproducible: un Codespace que 
+funciona en 2 minutos y módulos que pueden hacer a su ritmo.
+
+Lo aceleré usando Claude Code como copiloto — la arquitectura, los 
+módulos didácticos y las decisiones de stack son mías; la IA me 
+ayudó con la escritura del docker-compose, los Makefiles y la 
+documentación.
