@@ -156,7 +156,7 @@ docker ps
 
 Esto demuestra el punto clave: **una imagen, múltiples contenedores**.
 
-Como tener un IOS y bootar tres routers virtuales desde él.
+Como tener un IOS y bootear tres routers virtuales desde él.
 
 ### Limpieza
 
