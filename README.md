@@ -100,3 +100,17 @@ Lo aceleré usando Claude Code como copiloto — la arquitectura, los
 módulos didácticos y las decisiones de stack son mías; la IA me 
 ayudó con la escritura del docker-compose, los Makefiles y la 
 documentación.
+
+## Atajos del proyecto
+
+Este lab incluye un `Makefile` con atajos para los comandos más usados. Desde la raíz del repo:
+
+```bash
+make help          # Ver todos los comandos disponibles
+make n8n-start     # Levantar n8n
+make n8n-logs      # Ver logs en vivo
+make n8n-stop      # Detener (conserva datos)
+make n8n-clean     # Detener y borrar todo
+```
+
+Si preferís no usar `make`, todos los comandos están explicados en cada módulo.
