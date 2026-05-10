@@ -56,7 +56,7 @@ docker --version
 
 Respuesta esperada:
 ```
-Docker version 24.0.x, build xxxxxxx
+Docker version 29.0.x, build xxxxxxx
 ```
 
 ```bash
@@ -96,4 +96,4 @@ Porque el Codespace corre sobre un contenedor Docker. GitHub lo configuró para 
 
 Ya tenés el entorno listo. Vamos a correr tu primer contenedor.
 
-→ [Módulo 01 — Hello Docker](../01-hello-docker/README.md)
+Continuar con el Módulo 01 → [Módulo 01 — Hello Docker](../01-hello-docker/README.md)
