@@ -101,16 +101,39 @@ módulos didácticos y las decisiones de stack son mías; la IA me
 ayudó con la escritura del docker-compose, los Makefiles y la 
 documentación.
 
-## Atajos del proyecto
+## ⚡ Comandos rápidos del lab
 
-Este lab incluye un `Makefile` con atajos para los comandos más usados. Desde la raíz del repo:
+Este repositorio incluye un `Makefile` con atajos para los comandos más usados. Desde la raíz del repo, ejecutá:
 
 ```bash
-make help          # Ver todos los comandos disponibles
-make n8n-start     # Levantar n8n
-make n8n-logs      # Ver logs en vivo
-make n8n-stop      # Detener (conserva datos)
-make n8n-clean     # Detener y borrar todo
+make help
 ```
 
-Si preferís no usar `make`, todos los comandos están explicados en cada módulo.
+Vas a ver algo como:
+
+```
+Comandos disponibles:
+
+  n8n-start            Levantar n8n + PostgreSQL en background
+  n8n-stop             Detener n8n (mantiene los datos)
+  n8n-logs             Ver logs en tiempo real (Ctrl+C para salir)
+  n8n-status           Ver estado de los servicios
+  n8n-restart          Reiniciar solo n8n (sin tocar postgres)
+  n8n-clean            Borrar contenedores Y volúmenes (reset total)
+  ps                   Ver todos los contenedores corriendo
+  ps-all               Ver todos los contenedores (incluye detenidos)
+  images               Ver imágenes descargadas
+  clean-containers     Borrar todos los contenedores detenidos
+  clean-all            Borrar contenedores detenidos, imágenes sin uso y volúmenes huérfanos
+```
+
+### Comandos más usados
+
+| Comando | Qué hace |
+|---------|----------|
+| `make n8n-start` | Levanta n8n + PostgreSQL |
+| `make n8n-logs` | Ver qué está pasando |
+| `make n8n-stop` | Apagar (conserva datos) |
+| `make n8n-clean` | Apagar y **borrar todo** |
+
+> 💡 No es obligatorio usar el `Makefile`. Todos los comandos están explicados manualmente en cada módulo del curso.
